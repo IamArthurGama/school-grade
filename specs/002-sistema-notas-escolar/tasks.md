@@ -152,9 +152,9 @@
 - [ ] T066 [P] Create tokens summary document or cross-reference current usage log in `docs/TOKENS.md`
 - [ ] T067 [P] Verify AI token records remain current in `docs/AI_USAGE.md`
 - [ ] T068 Apply Bootstrap styling consistency across Razor layout and views in `SistemaNotasEscolar/Views`
-- [ ] T069 Run database migration command from `specs/002-sistema-notas-escolar/quickstart.md`
-- [ ] T070 Run full test suite with `dotnet test` from `SistemaNotasEscolar.sln`
-- [ ] T071 Run application smoke test with `dotnet run --project SistemaNotasEscolar`
+- [X] T069 Run database migration command from `specs/002-sistema-notas-escolar/quickstart.md`
+- [X] T070 Run full test suite with `dotnet test` from `SistemaNotasEscolar.sln`
+- [X] T071 Run application smoke test with `dotnet run --project SistemaNotasEscolar`
 - [ ] T072 Review all tasks and acceptance scenarios against `specs/002-sistema-notas-escolar/spec.md`
 
 ---
