@@ -1,0 +1,29 @@
+@model IEnumerable<SistemaNotasEscolar.Models.NotaDetalhada>
+
+@{
+    ViewData["Title"] = "Aluno + Disciplina + Nota";
+}
+
+<h1 class="h3 mb-3">Aluno + Disciplina + Nota</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Aluno</th>
+            <th>Matrícula</th>
+            <th>Disciplina</th>
+            <th>Nota</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AlunoNome</td>
+                <td>@item.Matricula</td>
+                <td>@item.DisciplinaNome</td>
+                <td>@item.Valor.ToString("0.##")</td>
+            </tr>
+        }
+    </tbody>
+</table>

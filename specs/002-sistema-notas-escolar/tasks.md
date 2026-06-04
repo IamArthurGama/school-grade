@@ -18,14 +18,14 @@
 
 **Purpose**: Create the solution, projects, dependencies, and base folders.
 
-- [ ] T001 Create ASP.NET Core MVC project in `SistemaNotasEscolar/SistemaNotasEscolar.csproj`
-- [ ] T002 Create xUnit test project in `Tests/SistemaNotasEscolar.Tests.csproj`
-- [ ] T003 Create solution file and add both projects in `SistemaNotasEscolar.sln`
-- [ ] T004 Add project reference from `Tests/SistemaNotasEscolar.Tests.csproj` to `SistemaNotasEscolar/SistemaNotasEscolar.csproj`
-- [ ] T005 Add Entity Framework Core SQL Server and Tools packages to `SistemaNotasEscolar/SistemaNotasEscolar.csproj`
-- [ ] T006 [P] Create planned MVC folders in `SistemaNotasEscolar/Controllers`, `SistemaNotasEscolar/Models`, `SistemaNotasEscolar/Data`, `SistemaNotasEscolar/Repositories`, `SistemaNotasEscolar/Services`, and `SistemaNotasEscolar/Views`
-- [ ] T007 [P] Create planned test folders in `Tests/Services` and `Tests/Repositories`
-- [ ] T008 Configure SQL Server connection string placeholder in `SistemaNotasEscolar/appsettings.json`
+- [X] T001 Create ASP.NET Core MVC project in `SistemaNotasEscolar/SistemaNotasEscolar.csproj`
+- [X] T002 Create xUnit test project in `Tests/SistemaNotasEscolar.Tests.csproj`
+- [X] T003 Create solution file and add both projects in `SistemaNotasEscolar.sln`
+- [X] T004 Add project reference from `Tests/SistemaNotasEscolar.Tests.csproj` to `SistemaNotasEscolar/SistemaNotasEscolar.csproj`
+- [X] T005 Add Entity Framework Core SQL Server and Tools packages to `SistemaNotasEscolar/SistemaNotasEscolar.csproj`
+- [X] T006 [P] Create planned MVC folders in `SistemaNotasEscolar/Controllers`, `SistemaNotasEscolar/Models`, `SistemaNotasEscolar/Data`, `SistemaNotasEscolar/Repositories`, `SistemaNotasEscolar/Services`, and `SistemaNotasEscolar/Views`
+- [X] T007 [P] Create planned test folders in `Tests/Services` and `Tests/Repositories`
+- [X] T008 Configure SQL Server connection string placeholder in `SistemaNotasEscolar/appsettings.json`
 
 ---
 
@@ -35,12 +35,12 @@
 
 **CRITICAL**: No user story work should begin until this phase is complete.
 
-- [ ] T009 Create application DbContext skeleton in `SistemaNotasEscolar/Data/AppDbContext.cs`
-- [ ] T010 Register MVC, DbContext, repositories, and services placeholders in `SistemaNotasEscolar/Program.cs`
-- [ ] T011 [P] Create shared validation result helper in `SistemaNotasEscolar/Services/ServiceResult.cs`
-- [ ] T012 [P] Create shared layout navigation entries for Alunos, Disciplinas, Notas, and Consultas in `SistemaNotasEscolar/Views/Shared/_Layout.cshtml`
+- [X] T009 Create application DbContext skeleton in `SistemaNotasEscolar/Data/AppDbContext.cs`
+- [X] T010 Register MVC, DbContext, repositories, and services placeholders in `SistemaNotasEscolar/Program.cs`
+- [X] T011 [P] Create shared validation result helper in `SistemaNotasEscolar/Services/ServiceResult.cs`
+- [X] T012 [P] Create shared layout navigation entries for Alunos, Disciplinas, Notas, and Consultas in `SistemaNotasEscolar/Views/Shared/_Layout.cshtml`
 - [ ] T013 [P] Create database initializer placeholder in `SistemaNotasEscolar/Data/DbInitializer.cs`
-- [ ] T014 Configure test database or in-memory context factory in `Tests/Repositories/TestDbContextFactory.cs`
+- [X] T014 Configure test database or in-memory context factory in `Tests/Repositories/TestDbContextFactory.cs`
 
 **Checkpoint**: Foundation ready. User story implementation can now begin.
 
@@ -54,30 +54,30 @@
 
 ### Tests for User Story 1
 
-- [ ] T015 [P] [US1] Write failing tests for required and unique student enrollment validation in `Tests/Services/AlunoServiceTests.cs`
-- [ ] T016 [P] [US1] Write failing tests for required subject name validation in `Tests/Services/DisciplinaServiceTests.cs`
-- [ ] T017 [P] [US1] Write failing repository persistence tests for students and subjects in `Tests/Repositories/RepositoryPersistenceTests.cs`
+- [X] T015 [P] [US1] Write failing tests for required and unique student enrollment validation in `Tests/Services/AlunoServiceTests.cs`
+- [X] T016 [P] [US1] Write failing tests for required subject name validation in `Tests/Services/DisciplinaServiceTests.cs`
+- [X] T017 [P] [US1] Write failing repository persistence tests for students and subjects in `Tests/Repositories/RepositoryPersistenceTests.cs`
 
 ### Implementation for User Story 1
 
-- [ ] T018 [P] [US1] Create Aluno model with Id, Nome, Matricula, and Notas navigation in `SistemaNotasEscolar/Models/Aluno.cs`
-- [ ] T019 [P] [US1] Create Disciplina model with Id, Nome, and Notas navigation in `SistemaNotasEscolar/Models/Disciplina.cs`
-- [ ] T020 [US1] Add Alunos and Disciplinas sets and uniqueness configuration to `SistemaNotasEscolar/Data/AppDbContext.cs`
-- [ ] T021 [P] [US1] Create student repository interface in `SistemaNotasEscolar/Repositories/IAlunoRepository.cs`
-- [ ] T022 [P] [US1] Create subject repository interface in `SistemaNotasEscolar/Repositories/IDisciplinaRepository.cs`
-- [ ] T023 [P] [US1] Implement student repository CRUD in `SistemaNotasEscolar/Repositories/AlunoRepository.cs`
-- [ ] T024 [P] [US1] Implement subject repository CRUD in `SistemaNotasEscolar/Repositories/DisciplinaRepository.cs`
-- [ ] T025 [P] [US1] Create student service interface in `SistemaNotasEscolar/Services/IAlunoService.cs`
-- [ ] T026 [P] [US1] Create subject service interface in `SistemaNotasEscolar/Services/IDisciplinaService.cs`
-- [ ] T027 [US1] Implement student validation and CRUD orchestration in `SistemaNotasEscolar/Services/AlunoService.cs`
-- [ ] T028 [US1] Implement subject validation and CRUD orchestration in `SistemaNotasEscolar/Services/DisciplinaService.cs`
-- [ ] T029 [US1] Register concrete student and subject repositories/services in `SistemaNotasEscolar/Program.cs`
-- [ ] T030 [P] [US1] Create AlunosController CRUD actions in `SistemaNotasEscolar/Controllers/AlunosController.cs`
-- [ ] T031 [P] [US1] Create DisciplinasController CRUD actions in `SistemaNotasEscolar/Controllers/DisciplinasController.cs`
-- [ ] T032 [P] [US1] Create Alunos Razor views Index/Create/Edit/Delete in `SistemaNotasEscolar/Views/Alunos`
-- [ ] T033 [P] [US1] Create Disciplinas Razor views Index/Create/Edit/Delete in `SistemaNotasEscolar/Views/Disciplinas`
-- [ ] T034 [US1] Create initial migration for students and subjects in `SistemaNotasEscolar/Migrations`
-- [ ] T035 [US1] Run all US1 tests with `dotnet test` from `SistemaNotasEscolar.sln`
+- [X] T018 [P] [US1] Create Aluno model with Id, Nome, Matricula, and Notas navigation in `SistemaNotasEscolar/Models/Aluno.cs`
+- [X] T019 [P] [US1] Create Disciplina model with Id, Nome, and Notas navigation in `SistemaNotasEscolar/Models/Disciplina.cs`
+- [X] T020 [US1] Add Alunos and Disciplinas sets and uniqueness configuration to `SistemaNotasEscolar/Data/AppDbContext.cs`
+- [X] T021 [P] [US1] Create student repository interface in `SistemaNotasEscolar/Repositories/IAlunoRepository.cs`
+- [X] T022 [P] [US1] Create subject repository interface in `SistemaNotasEscolar/Repositories/IDisciplinaRepository.cs`
+- [X] T023 [P] [US1] Implement student repository CRUD in `SistemaNotasEscolar/Repositories/AlunoRepository.cs`
+- [X] T024 [P] [US1] Implement subject repository CRUD in `SistemaNotasEscolar/Repositories/DisciplinaRepository.cs`
+- [X] T025 [P] [US1] Create student service interface in `SistemaNotasEscolar/Services/IAlunoService.cs`
+- [X] T026 [P] [US1] Create subject service interface in `SistemaNotasEscolar/Services/IDisciplinaService.cs`
+- [X] T027 [US1] Implement student validation and CRUD orchestration in `SistemaNotasEscolar/Services/AlunoService.cs`
+- [X] T028 [US1] Implement subject validation and CRUD orchestration in `SistemaNotasEscolar/Services/DisciplinaService.cs`
+- [X] T029 [US1] Register concrete student and subject repositories/services in `SistemaNotasEscolar/Program.cs`
+- [X] T030 [P] [US1] Create AlunosController CRUD actions in `SistemaNotasEscolar/Controllers/AlunosController.cs`
+- [X] T031 [P] [US1] Create DisciplinasController CRUD actions in `SistemaNotasEscolar/Controllers/DisciplinasController.cs`
+- [X] T032 [P] [US1] Create Alunos Razor views Index/Create/Edit/Delete in `SistemaNotasEscolar/Views/Alunos`
+- [X] T033 [P] [US1] Create Disciplinas Razor views Index/Create/Edit/Delete in `SistemaNotasEscolar/Views/Disciplinas`
+- [X] T034 [US1] Create initial migration for students and subjects in `SistemaNotasEscolar/Migrations`
+- [X] T035 [US1] Run all US1 tests with `dotnet test` from `SistemaNotasEscolar.sln`
 
 **Checkpoint**: User Story 1 is functional and independently testable.
 
@@ -91,22 +91,22 @@
 
 ### Tests for User Story 2
 
-- [ ] T036 [P] [US2] Write failing tests for grade range and required relationship validation in `Tests/Services/NotaServiceTests.cs`
-- [ ] T037 [P] [US2] Write failing repository persistence tests for grades with student and subject references in `Tests/Repositories/RepositoryPersistenceTests.cs`
+- [X] T036 [P] [US2] Write failing tests for grade range and required relationship validation in `Tests/Services/NotaServiceTests.cs`
+- [X] T037 [P] [US2] Write failing repository persistence tests for grades with student and subject references in `Tests/Repositories/RepositoryPersistenceTests.cs`
 
 ### Implementation for User Story 2
 
-- [ ] T038 [US2] Create Nota model with Id, Valor, AlunoId, DisciplinaId, and navigation properties in `SistemaNotasEscolar/Models/Nota.cs`
-- [ ] T039 [US2] Configure Nota relationships and grade precision/range support in `SistemaNotasEscolar/Data/AppDbContext.cs`
-- [ ] T040 [P] [US2] Create grade repository interface in `SistemaNotasEscolar/Repositories/INotaRepository.cs`
-- [ ] T041 [US2] Implement grade repository CRUD with included Aluno and Disciplina data in `SistemaNotasEscolar/Repositories/NotaRepository.cs`
-- [ ] T042 [P] [US2] Create grade service interface in `SistemaNotasEscolar/Services/INotaService.cs`
-- [ ] T043 [US2] Implement grade validation and CRUD orchestration in `SistemaNotasEscolar/Services/NotaService.cs`
-- [ ] T044 [US2] Register grade repository and service in `SistemaNotasEscolar/Program.cs`
-- [ ] T045 [US2] Add migration for grades and relationships in `SistemaNotasEscolar/Migrations`
-- [ ] T046 [US2] Create NotasController CRUD actions in `SistemaNotasEscolar/Controllers/NotasController.cs`
-- [ ] T047 [US2] Create Notas Razor views Index/Create/Edit/Delete with student and subject selectors in `SistemaNotasEscolar/Views/Notas`
-- [ ] T048 [US2] Run US1 and US2 tests with `dotnet test` from `SistemaNotasEscolar.sln`
+- [X] T038 [US2] Create Nota model with Id, Valor, AlunoId, DisciplinaId, and navigation properties in `SistemaNotasEscolar/Models/Nota.cs`
+- [X] T039 [US2] Configure Nota relationships and grade precision/range support in `SistemaNotasEscolar/Data/AppDbContext.cs`
+- [X] T040 [P] [US2] Create grade repository interface in `SistemaNotasEscolar/Repositories/INotaRepository.cs`
+- [X] T041 [US2] Implement grade repository CRUD with included Aluno and Disciplina data in `SistemaNotasEscolar/Repositories/NotaRepository.cs`
+- [X] T042 [P] [US2] Create grade service interface in `SistemaNotasEscolar/Services/INotaService.cs`
+- [X] T043 [US2] Implement grade validation and CRUD orchestration in `SistemaNotasEscolar/Services/NotaService.cs`
+- [X] T044 [US2] Register grade repository and service in `SistemaNotasEscolar/Program.cs`
+- [X] T045 [US2] Add migration for grades and relationships in `SistemaNotasEscolar/Migrations`
+- [X] T046 [US2] Create NotasController CRUD actions in `SistemaNotasEscolar/Controllers/NotasController.cs`
+- [X] T047 [US2] Create Notas Razor views Index/Create/Edit/Delete with student and subject selectors in `SistemaNotasEscolar/Views/Notas`
+- [X] T048 [US2] Run US1 and US2 tests with `dotnet test` from `SistemaNotasEscolar.sln`
 
 **Checkpoint**: User Stories 1 and 2 work independently.
 
@@ -120,24 +120,24 @@
 
 ### Tests for User Story 3
 
-- [ ] T049 [P] [US3] Write failing tests for combined student-subject-grade query in `Tests/Services/ConsultaServiceTests.cs`
-- [ ] T050 [P] [US3] Write failing tests for average by subject grouping in `Tests/Services/ConsultaServiceTests.cs`
-- [ ] T051 [P] [US3] Write failing tests for grade >= 6 and grouped average >= 7 filters in `Tests/Services/ConsultaServiceTests.cs`
+- [X] T049 [P] [US3] Write failing tests for combined student-subject-grade query in `Tests/Services/ConsultaServiceTests.cs`
+- [X] T050 [P] [US3] Write failing tests for average by subject grouping in `Tests/Services/ConsultaServiceTests.cs`
+- [X] T051 [P] [US3] Write failing tests for grade >= 6 and grouped average >= 7 filters in `Tests/Services/ConsultaServiceTests.cs`
 
 ### Implementation for User Story 3
 
-- [ ] T052 [P] [US3] Create NotaDetalhada view model in `SistemaNotasEscolar/Models/NotaDetalhada.cs`
-- [ ] T053 [P] [US3] Create MediaPorDisciplina view model in `SistemaNotasEscolar/Models/MediaPorDisciplina.cs`
-- [ ] T054 [P] [US3] Create consultation service interface in `SistemaNotasEscolar/Services/IConsultaService.cs`
-- [ ] T055 [US3] Implement combined Aluno + Disciplina + Nota query in `SistemaNotasEscolar/Services/ConsultaService.cs`
-- [ ] T056 [US3] Implement GroupBy average by subject query in `SistemaNotasEscolar/Services/ConsultaService.cs`
-- [ ] T057 [US3] Implement WHERE-style grade filter and HAVING-style average filter in `SistemaNotasEscolar/Services/ConsultaService.cs`
-- [ ] T058 [US3] Register consultation service in `SistemaNotasEscolar/Program.cs`
-- [ ] T059 [US3] Create ConsultasController actions in `SistemaNotasEscolar/Controllers/ConsultasController.cs`
-- [ ] T060 [P] [US3] Create combined grade consultation Razor view in `SistemaNotasEscolar/Views/Consultas/NotasPorAlunoDisciplina.cshtml`
-- [ ] T061 [P] [US3] Create average by subject Razor view in `SistemaNotasEscolar/Views/Consultas/MediasPorDisciplina.cshtml`
-- [ ] T062 [P] [US3] Create filtered consultation Razor view in `SistemaNotasEscolar/Views/Consultas/Filtros.cshtml`
-- [ ] T063 [US3] Run all service and query tests with `dotnet test` from `SistemaNotasEscolar.sln`
+- [X] T052 [P] [US3] Create NotaDetalhada view model in `SistemaNotasEscolar/Models/NotaDetalhada.cs`
+- [X] T053 [P] [US3] Create MediaPorDisciplina view model in `SistemaNotasEscolar/Models/MediaPorDisciplina.cs`
+- [X] T054 [P] [US3] Create consultation service interface in `SistemaNotasEscolar/Services/IConsultaService.cs`
+- [X] T055 [US3] Implement combined Aluno + Disciplina + Nota query in `SistemaNotasEscolar/Services/ConsultaService.cs`
+- [X] T056 [US3] Implement GroupBy average by subject query in `SistemaNotasEscolar/Services/ConsultaService.cs`
+- [X] T057 [US3] Implement WHERE-style grade filter and HAVING-style average filter in `SistemaNotasEscolar/Services/ConsultaService.cs`
+- [X] T058 [US3] Register consultation service in `SistemaNotasEscolar/Program.cs`
+- [X] T059 [US3] Create ConsultasController actions in `SistemaNotasEscolar/Controllers/ConsultasController.cs`
+- [X] T060 [P] [US3] Create combined grade consultation Razor view in `SistemaNotasEscolar/Views/Consultas/NotasPorAlunoDisciplina.cshtml`
+- [X] T061 [P] [US3] Create average by subject Razor view in `SistemaNotasEscolar/Views/Consultas/MediasPorDisciplina.cshtml`
+- [X] T062 [P] [US3] Create filtered consultation Razor view in `SistemaNotasEscolar/Views/Consultas/Filtros.cshtml`
+- [X] T063 [US3] Run all service and query tests with `dotnet test` from `SistemaNotasEscolar.sln`
 
 **Checkpoint**: All user stories are independently functional.
 

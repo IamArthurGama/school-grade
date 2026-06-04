@@ -1,0 +1,27 @@
+@model IEnumerable<SistemaNotasEscolar.Models.MediaPorDisciplina>
+
+@{
+    ViewData["Title"] = "Média por disciplina";
+}
+
+<h1 class="h3 mb-3">Média por disciplina</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Disciplina</th>
+            <th>Quantidade de notas</th>
+            <th>Média</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DisciplinaNome</td>
+                <td>@item.QuantidadeNotas</td>
+                <td>@item.Media.ToString("0.##")</td>
+            </tr>
+        }
+    </tbody>
+</table>
