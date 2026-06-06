@@ -1,59 +1,103 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SistemaNotasEscolar</title>
-    <script type="importmap"></script>
+    <title>@ViewData["Title"] - Sistema de Notas</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SistemaNotasEscolar.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SistemaNotasEscolar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Alunos" asp-action="Index">Alunos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Disciplinas" asp-action="Index">Disciplinas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Notas" asp-action="Index">Notas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Consultas" asp-action="Index">Consultas</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+}
+<div class="app-wrapper">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <i data-lucide="graduation-cap" class="brand-icon"></i>
+            <span class="brand-name">GradeTrack</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a class="sidebar-link @(controller == "Home" ? "active" : "")"
+               asp-area="" asp-controller="Home" asp-action="Index">
+                <i data-lucide="house"></i>
+                <span>Início</span>
+            </a>
+            <a class="sidebar-link @(controller == "Alunos" ? "active" : "")"
+               asp-area="" asp-controller="Alunos" asp-action="Index">
+                <i data-lucide="users"></i>
+                <span>Alunos</span>
+            </a>
+            <a class="sidebar-link @(controller == "Disciplinas" ? "active" : "")"
+               asp-area="" asp-controller="Disciplinas" asp-action="Index">
+                <i data-lucide="book-open"></i>
+                <span>Disciplinas</span>
+            </a>
+            <a class="sidebar-link @(controller == "Notas" ? "active" : "")"
+               asp-area="" asp-controller="Notas" asp-action="Index">
+                <i data-lucide="clipboard-list"></i>
+                <span>Notas</span>
+            </a>
+            <a class="sidebar-link @(controller == "Consultas" ? "active" : "")"
+               asp-area="" asp-controller="Consultas" asp-action="Index">
+                <i data-lucide="search"></i>
+                <span>Consultas</span>
+            </a>
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+        <div class="sidebar-footer">
+            <span class="sidebar-version">v1.0.0</span>
+        </div>
+    </aside>
+
+    <div class="main-wrapper" id="mainWrapper">
+        <header class="topbar">
+            <button class="sidebar-toggle" id="sidebarToggle" type="button" title="Alternar menu">
+                <i data-lucide="panel-left-close" id="toggleIcon"></i>
+            </button>
+            <div class="topbar-breadcrumb">
+                <i data-lucide="chevron-right" class="breadcrumb-sep"></i>
+                <span class="topbar-page">@ViewData["Title"]</span>
+            </div>
+        </header>
+
+        <main class="main-content" role="main">
             @RenderBody()
         </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - SistemaNotasEscolar
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        <footer class="app-footer">
+            <span>&copy; 2026 GradeTrack &mdash; Sistema de Notas Escolar</span>
+        </footer>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script>
+    lucide.createIcons();
+
+    const sidebar = document.getElementById('sidebar');
+    const mainWrapper = document.getElementById('mainWrapper');
+    const toggleIcon = document.getElementById('toggleIcon');
+    const collapsed = localStorage.getItem('sidebar-collapsed') === 'true';
+
+    if (collapsed) {
+        sidebar.classList.add('collapsed');
+        mainWrapper.classList.add('expanded');
+        toggleIcon.setAttribute('data-lucide', 'panel-left-open');
+        lucide.createIcons();
+    }
+
+    document.getElementById('sidebarToggle')?.addEventListener('click', () => {
+        const isCollapsed = sidebar.classList.toggle('collapsed');
+        mainWrapper.classList.toggle('expanded');
+        toggleIcon.setAttribute('data-lucide', isCollapsed ? 'panel-left-open' : 'panel-left-close');
+        lucide.createIcons();
+        localStorage.setItem('sidebar-collapsed', isCollapsed);
+    });
+</script>
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
