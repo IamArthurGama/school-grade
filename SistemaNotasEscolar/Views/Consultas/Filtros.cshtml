@@ -1,0 +1,52 @@
+@using SistemaNotasEscolar.Models
+@{
+    ViewData["Title"] = "Where + filtro de grupo";
+    var notasAprovadas = (IEnumerable<NotaDetalhada>)ViewBag.NotasAprovadas;
+    var mediasAprovadas = (IEnumerable<MediaPorDisciplina>)ViewBag.MediasAprovadas;
+}
+
+<h1 class="h3 mb-4">Where + filtro de grupo</h1>
+
+<h2 class="h5">Notas maiores ou iguais a 6</h2>
+<table class="table table-striped mb-4">
+    <thead>
+        <tr>
+            <th>Aluno</th>
+            <th>Matrícula</th>
+            <th>Disciplina</th>
+            <th>Nota</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in notasAprovadas)
+        {
+            <tr>
+                <td>@item.AlunoNome</td>
+                <td>@item.Matricula</td>
+                <td>@item.DisciplinaNome</td>
+                <td>@item.Valor.ToString("0.##")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2 class="h5">Disciplinas com média maior ou igual a 7</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Disciplina</th>
+            <th>Quantidade de notas</th>
+            <th>Média</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in mediasAprovadas)
+        {
+            <tr>
+                <td>@item.DisciplinaNome</td>
+                <td>@item.QuantidadeNotas</td>
+                <td>@item.Media.ToString("0.##")</td>
+            </tr>
+        }
+    </tbody>
+</table>

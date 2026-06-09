@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Consultas";
+}
+
+<div class="page-header mb-4">
+    <h1 class="h3 mb-0">Consultas</h1>
+</div>
+
+<div class="list-group col-md-7" style="border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+    <a class="list-group-item list-group-item-action" asp-action="NotasPorAlunoDisciplina">
+        <i data-lucide="table-2"></i>
+        Aluno + Disciplina + Nota
+    </a>
+    <a class="list-group-item list-group-item-action" asp-action="MediasPorDisciplina">
+        <i data-lucide="bar-chart-2"></i>
+        Média por disciplina
+    </a>
+    <a class="list-group-item list-group-item-action" asp-action="Filtros">
+        <i data-lucide="filter"></i>
+        Where + filtro de grupo
+    </a>
+</div>

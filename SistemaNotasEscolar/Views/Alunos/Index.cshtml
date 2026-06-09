@@ -1,0 +1,52 @@
+@model IEnumerable<SistemaNotasEscolar.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Alunos";
+}
+
+<div class="page-header">
+    <h1 class="h3 mb-0">Alunos</h1>
+    <a class="btn btn-primary" asp-action="Create">
+        <i data-lucide="user-plus"></i>
+        Novo aluno
+    </a>
+</div>
+
+@if (TempData["ErrorMessage"] is string errorMessage)
+{
+    <div class="alert alert-danger mb-3">
+        <i data-lucide="alert-circle"></i>
+        @errorMessage
+    </div>
+}
+
+<div class="table-wrapper">
+    <table class="table table-striped align-middle mb-0">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Matrícula</th>
+                <th class="text-end">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var aluno in Model)
+            {
+                <tr>
+                    <td>@aluno.Nome</td>
+                    <td>@aluno.Matricula</td>
+                    <td class="text-end">
+                        <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@aluno.Id">
+                            <i data-lucide="pencil"></i>
+                            Editar
+                        </a>
+                        <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@aluno.Id">
+                            <i data-lucide="trash-2"></i>
+                            Excluir
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

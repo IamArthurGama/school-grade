@@ -1,0 +1,88 @@
+@{
+    ViewData["Title"] = "Início";
+}
+
+<div class="welcome-card">
+    <div class="welcome-icon">
+        <i data-lucide="graduation-cap"></i>
+    </div>
+    <div>
+        <div class="welcome-title">Bem-vindo ao GradeTrack</div>
+        <p class="welcome-sub">Sistema de controle de notas escolares. Gerencie alunos, disciplinas e notas em um só lugar.</p>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon indigo">
+                <i data-lucide="users"></i>
+            </div>
+            <div>
+                <div class="stat-label">Alunos</div>
+                <div class="stat-value">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon emerald">
+                <i data-lucide="book-open"></i>
+            </div>
+            <div>
+                <div class="stat-label">Disciplinas</div>
+                <div class="stat-value">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon amber">
+                <i data-lucide="clipboard-list"></i>
+            </div>
+            <div>
+                <div class="stat-label">Notas</div>
+                <div class="stat-value">—</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon rose">
+                <i data-lucide="search"></i>
+            </div>
+            <div>
+                <div class="stat-label">Consultas</div>
+                <div class="stat-value">3</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h6 class="mb-3" style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600;">Acesso rápido</h6>
+<div class="row g-2">
+    <div class="col-sm-6 col-md-3">
+        <a asp-controller="Alunos" asp-action="Index" class="quick-link">
+            <i data-lucide="users"></i>
+            Alunos
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <a asp-controller="Disciplinas" asp-action="Index" class="quick-link">
+            <i data-lucide="book-open"></i>
+            Disciplinas
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <a asp-controller="Notas" asp-action="Index" class="quick-link">
+            <i data-lucide="clipboard-list"></i>
+            Notas
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <a asp-controller="Consultas" asp-action="Index" class="quick-link">
+            <i data-lucide="search"></i>
+            Consultas
+        </a>
+    </div>
+</div>
